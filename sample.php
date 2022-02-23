@@ -1,16 +1,27 @@
-# VideoColor PHP Search Client
+<?php
 
-This library is designed to find information about a movie and get the frame position using a screenshot from a video.
-The call is made to the site https://www.videocolor.aapsoftware.ru.
-The number of free calls is limited. To remove restrictions, contact the site owner.
+/**
+ * Finding information about the movie and the exact position
+ * of the frame in the video from the screenshot
+ */
 
-Usage example
+declare(strict_types=1);
+ 
+require("src/SearchClient.php");
+//use AapSoftware\VideoColor\SearchClient;
 
-//------------------------------------------------------
-use AapSoftware\VideoColor\SearchClient;
+// Check input parameters
+if ($argc < 2) {
+	echo "Usage: c:\\php\\php sample.php image\n"
+		."Example: c:\\php\\php sample.php test.jpg\n";
+	return;
+}
 
-...
-
+$fname = $argv[1];
+if (!file_exists($fname)) {
+    echo "Input file not found!\n";
+    return;
+}
 $img = imagecreatefromjpeg($fname);
 $search = new AapSoftware\VideoColor\SearchClient();
 $obj = $search->get($img);
@@ -35,5 +46,3 @@ if ($obj === null) {
 	echo "Kinopoisk:\t".$obj->kinopoisk."\n";
 	echo "Description:\t".$obj->description."\n";
 }
-//------------------------------------------------------
-

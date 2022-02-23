@@ -1,0 +1,23 @@
+{
+    "name": "aap_software/video_color_search_client",
+    "description": "Composer package for video search by screenshot",
+    "type": "library",
+    "require": {
+        "php": "5.4.0"
+    },
+    "require-dev": {
+        "php": "5.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "AapSoftware\\VideoColor\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Alexander Alekseev",
+            "email": "alekseev23@users.noreply.github.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
