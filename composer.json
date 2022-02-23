@@ -3,10 +3,10 @@
     "description": "Composer package for video search by screenshot",
     "type": "library",
     "require": {
-        "php": "5.4.0"
+        "php": "^5.4.0"
     },
     "require-dev": {
-        "php": "5.4.0"
+        "php": "^5.4.0"
     },
     "autoload": {
         "psr-4": {
@@ -19,5 +19,5 @@
             "email": "alekseev23@users.noreply.github.com"
         }
     ],
-    "minimum-stability": "dev"
+    "minimum-stability": "stable"
 }
