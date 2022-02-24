@@ -1,9 +1,14 @@
 # VideoColor PHP Search Client
 
 This library is designed to find information about a movie and get the frame position using a screenshot from a video.
+
+You can use this library to place a search form on your site to upload a screenshot and search for the video title and other information.
+
 The number of free calls is limited. To remove restrictions, contact the site owner.
 
 ## About Video Color
+
+![Web-site screenshot](https://www.videocolor.aapsoftware.ru/v4/images/site_screenshot.jpg.jpg "https://www.videocolor.aapsoftware.ru")
 
 ### Search for information
 
@@ -16,6 +21,15 @@ In short, our technology allows us to find the name of the film and the exact po
 ### Site
 
 [www.videocolor.aapsoftware.ru](https://www.videocolor.aapsoftware.ru "Video Color Site")
+
+### How to search for videos?
+
+* [Web-site](https://www.videocolor.aapsoftware.ru "Video Color Site")
+* [Windows application](https://www.aapsoftware.ru/product.php?id=83 "Video Color Search Client for Windows"))
+* [Android application](https://www.aapsoftware.ru/product.php?id=84 "Video Color Search Client for Android"))
+
+![Windows application screenshot](https://www.aapsoftware.ru/products/video_color_search_client/images/main_en.jpg "Video Color Search Client for Windows")
+![Android application screenshot](https://www.aapsoftware.ru/products/video_color_search_client_android/images/query.jpg "Video Color Search Client for Android")
 
 ## Test
 
@@ -41,6 +55,11 @@ IMDB:   http://www.imdb.com/title/tt0090557/
 Kinopoisk:
 Description:    In 'Round Midnight, real-life jazz legend Dexter Gordon brilliantly portrays the fictional tenor sax player Dale Turner, a musician slowly losing the battle with alcoholism, estranged from his family, and hanging on by a thread in the 1950's New York jazz world. Dale gets an offer to play in Paris, where, like many other black American musicians at the time, he enjoys a respect for his humanity that is not based upon the color of his skin. A Parisian man who is obsessed with Turner's music befriends him and attempts to save Turner from himself. Although for Dale the damage is already done, his poignant relationship with the man and his young daughter re-kindles his spirit and his music as the end draws near.
 ```
+
+### Supported languages
+
+* English
+* Russian
 
 ## Usage example
 
@@ -74,10 +93,29 @@ if ($obj === null) {
 	echo "Description:\t".$obj->description."\n";
 }
 ```
+### English
 
-## Publications
+If we want to get information about the video in English
 
-* [Site](https://www.videocolor.aapsoftware.ru "Video Color Site")
+```PHP
+$obj = $search->get($img);
+```
+
+or
+
+```PHP
+$obj = $search->get($img,"en");
+```
+
+### Russian
+
+If we want to get information about the video in Russian
+
+```PHP
+$obj = $search->get($img,"ru");
+```
+
+## Publications in Russian
 
 * [Video Search Technology "Video Color"](https://medium.com/@grifer163/%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F-%D0%B2%D0%B8%D0%B4%D0%B5%D0%BE-%D0%BF%D0%BE%D0%B8%D1%81%D0%BA%D0%B0-video-color-8960214cc911)
 * [Video Search Technology «Video Color» (new article)](https://habr.com/ru/post/517048/)
