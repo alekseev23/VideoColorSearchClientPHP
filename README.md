@@ -29,7 +29,7 @@ In short, our technology allows us to find the name of the film and the exact po
 * [Android application](https://www.aapsoftware.ru/product.php?id=84 "Video Color Search Client for Android"))
 
 ![Windows application screenshot](https://www.videocolor.aapsoftware.ru/v4/images/windows_application.jpg "Video Color Search Client for Windows")
-![Android application screenshot](https://www.videocolor.aapsoftware.ru/v4/images/windows_application.jpg "Video Color Search Client for Android")
+![Android application screenshot](https://www.videocolor.aapsoftware.ru/v4/images/android_application.jpg "Video Color Search Client for Android")
 
 ## Test
 
