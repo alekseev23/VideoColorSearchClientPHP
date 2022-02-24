@@ -8,7 +8,7 @@ The number of free calls is limited. To remove restrictions, contact the site ow
 
 ## About Video Color
 
-![Web-site screenshot](https://www.videocolor.aapsoftware.ru/v4/images/site_screenshot.jpg.jpg "https://www.videocolor.aapsoftware.ru")
+![Web-site screenshot](https://www.videocolor.aapsoftware.ru/v4/images/site_screenshot.jpg "https://www.videocolor.aapsoftware.ru")
 
 ### Search for information
 
@@ -28,8 +28,8 @@ In short, our technology allows us to find the name of the film and the exact po
 * [Windows application](https://www.aapsoftware.ru/product.php?id=83 "Video Color Search Client for Windows"))
 * [Android application](https://www.aapsoftware.ru/product.php?id=84 "Video Color Search Client for Android"))
 
-![Windows application screenshot](https://www.aapsoftware.ru/products/video_color_search_client/images/main_en.jpg "Video Color Search Client for Windows")
-![Android application screenshot](https://www.aapsoftware.ru/products/video_color_search_client_android/images/query.jpg "Video Color Search Client for Android")
+![Windows application screenshot](https://www.videocolor.aapsoftware.ru/v4/images/windows_application.jpg "Video Color Search Client for Windows")
+![Android application screenshot](https://www.videocolor.aapsoftware.ru/v4/images/windows_application.jpg "Video Color Search Client for Android")
 
 ## Test
 
