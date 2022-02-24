@@ -25,8 +25,8 @@ In short, our technology allows us to find the name of the film and the exact po
 ### How to search for videos?
 
 * [Web-site](https://www.videocolor.aapsoftware.ru "Video Color Site")
-* [Windows application](https://www.aapsoftware.ru/product.php?id=83 "Video Color Search Client for Windows"))
-* [Android application](https://www.aapsoftware.ru/product.php?id=84 "Video Color Search Client for Android"))
+* [Windows application](https://www.aapsoftware.ru/product.php?id=83 "Video Color Search Client for Windows")
+* [Android application](https://www.aapsoftware.ru/product.php?id=84 "Video Color Search Client for Android")
 
 ![Windows application screenshot](https://www.videocolor.aapsoftware.ru/v4/images/windows_application.jpg "Video Color Search Client for Windows")
 ![Android application screenshot](https://www.videocolor.aapsoftware.ru/v4/images/android_application.jpg "Video Color Search Client for Android")
@@ -95,7 +95,7 @@ if ($obj === null) {
 ```
 ### English
 
-If we want to get information about the video in English
+If you want to get information about the video in English.
 
 ```PHP
 $obj = $search->get($img);
@@ -109,7 +109,7 @@ $obj = $search->get($img,"en");
 
 ### Russian
 
-If we want to get information about the video in Russian
+If you want to get information about the video in Russian.
 
 ```PHP
 $obj = $search->get($img,"ru");

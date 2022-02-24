@@ -1,14 +1,12 @@
 <?php
 
 /**
- * Finding information about the movie and the exact position
- * of the frame in the video from the screenshot
+ * Sample script for search information about the video by screenshot
  */
 
 declare(strict_types=1);
  
 require("src/SearchClient.php");
-//use AapSoftware\VideoColor\SearchClient;
 
 // Check input parameters
 if ($argc < 2) {
@@ -29,7 +27,6 @@ imagedestroy($img);
 
 if ($obj === null) {
     echo "Server not connected!\n";
-    return;
 } elseif (!$obj->result) {
 	echo "Not found\n";
 } else {
