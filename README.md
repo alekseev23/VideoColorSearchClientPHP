@@ -5,9 +5,17 @@ The number of free calls is limited. To remove restrictions, contact the site ow
 
 ## About Video Color
 
+### Search for information
+
 All of us are faced with the task of finding information every day. You want to find text, images, audio or video information. Most often, text is used for a search query. Less commonly, images. There are services like "Shazam" that search for music using sound recording. We focused on building a search engine that searches for videos. We use images as parameters for the request.
 
-[Site](https://www.videocolor.aapsoftware.ru "Video Color Site")
+### What is our advantage?
+
+In short, our technology allows us to find the name of the film and the exact position in one frame with a sufficiently high accuracy. This first requires an analysis of the indexed file. Then the results are entered into the database. At the same time, the amount of stored data is relatively small, and the data storage structure allows searching very efficiently. So, for example, according to our calculations, a server with a fast PCI Express SSD disk with a capacity of about 15 TB will be able to store information about 1,000,000 hours of video and carry out tens (possibly hundreds) of search queries per second.
+
+### Site
+
+[www.videocolor.aapsoftware.ru](https://www.videocolor.aapsoftware.ru "Video Color Site")
 
 ## Test
 
@@ -67,3 +75,13 @@ if ($obj === null) {
 }
 ```
 
+## Publications
+
+* [Site](https://www.videocolor.aapsoftware.ru "Video Color Site")
+
+* [Video Search Technology "Video Color"](https://medium.com/@grifer163/%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F-%D0%B2%D0%B8%D0%B4%D0%B5%D0%BE-%D0%BF%D0%BE%D0%B8%D1%81%D0%BA%D0%B0-video-color-8960214cc911)
+* [Video Search Technology «Video Color» (new article)](https://habr.com/ru/post/517048/)
+* [Aspect ratio problems in database search and solutions](https://habr.com/ru/post/588899/)
+* [Using index hashes to speed up the search for frames in the database](https://habr.com/ru/post/589013/)
+* [Using perceptual hashes to speed up the search for frames in the "VideoColor" database](https://habr.com/ru/post/589383/)
+* [Search engine "Video Color" for movie lovers](https://habr.com/ru/post/596857/)
