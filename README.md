@@ -68,10 +68,10 @@ use AapSoftware\VideoColor\SearchClient;
 
 ...
 
-$search = new AapSoftware\VideoColor\SearchClient();
-$obj = $search->find($file);
-
 try {
+    $search = new AapSoftware\VideoColor\SearchClient();
+    $obj = $search->find($fname);
+
     if ($obj->result) {
         echo "Title:\t", $obj->title, "\n";
         echo "Frame:\t", $obj->frame, "\n";

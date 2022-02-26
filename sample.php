@@ -23,10 +23,10 @@ if (!file_exists($fname)) {
     return;
 }
 
-$search = new AapSoftware\VideoColor\SearchClient();
-$obj = $search->find($fname);
-
 try {
+    $search = new AapSoftware\VideoColor\SearchClient();
+    $obj = $search->find($fname);
+
     if ($obj->result) {
         echo "Title:\t", $obj->title, "\n";
         echo "Frame:\t", $obj->frame, "\n";
