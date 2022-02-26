@@ -112,6 +112,20 @@ If you want to get information about the video in Russian.
 $obj = $search->find($file, LanguageEnum::RUSSIAN);
 ```
 
+## Run in Docker
+```shell
+## build
+docker build -t video-color-search-client . 
+
+## shell
+docker run -it video-color-search-client
+
+## run sample.php
+docker run -it video-color-search-client php sample.php test.jpg
+
+## run tests
+docker run -it video-color-search-client ./vendor/phpunit/phpunit/phpunit --testdox tests
+```
 ## Publications in Russian
 
 * [Video Search Technology "Video Color"](https://medium.com/@grifer163/%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F-%D0%B2%D0%B8%D0%B4%D0%B5%D0%BE-%D0%BF%D0%BE%D0%B8%D1%81%D0%BA%D0%B0-video-color-8960214cc911)
