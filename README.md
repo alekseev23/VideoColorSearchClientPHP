@@ -68,29 +68,29 @@ use AapSoftware\VideoColor\SearchClient;
 
 ...
 
-$img = imagecreatefromjpeg($fname);
-$search = new AapSoftware\VideoColor\SearchClient();
-$obj = $search->get($img);
-imagedestroy($img);
+try {
+    $search = new AapSoftware\VideoColor\SearchClient();
+    $obj = $search->find($fname);
 
-if ($obj === null) {
+    if ($obj->result) {
+        echo "Title:\t", $obj->title, "\n";
+        echo "Frame:\t", $obj->frame, "\n";
+        echo "Position:\t", $obj->position, "\n";
+        echo "Duration:\t", $obj->duration, "\n";
+        echo "Producer:\t", $obj->producer, "\n";
+        echo "Country:\t", $obj->country, "\n";
+        echo "Creation year:\t", $obj->creation_year, "\n";
+        echo "Genre:\t", $obj->genre, "\n";
+        echo "Actors:\t", $obj->actors, "\n";
+        echo "IMDB:\t", $obj->imdb, "\n";
+        echo "Kinopoisk:\t", $obj->kinopoisk, "\n";
+        echo "Description:\t", $obj->description, "\n";
+    } else {
+        echo "Not found\n";
+    }
+} catch (ApiException $e) {
     echo "Server not connected!\n";
-    return;
-} elseif (!$obj->result) {
-	echo "Not found\n";
-} else {
-	echo "Title:\t" . $obj->title . "\n";
-	echo "Frame:\t" . $obj->frame."\n";
-	echo "Position:\t" . $obj->position . "\n";
-	echo "Duration:\t" . $obj->duration . "\n";
-	echo "Producer:\t".$obj->producer."\n";
-	echo "Country:\t".$obj->country."\n";
-	echo "Creation year:\t".$obj->creation_year."\n";
-	echo "Genre:\t".$obj->genre."\n";
-	echo "Actors:\t".$obj->actors."\n";
-	echo "IMDB:\t".$obj->imdb."\n";
-	echo "Kinopoisk:\t".$obj->kinopoisk."\n";
-	echo "Description:\t".$obj->description."\n";
+    echo $e->getMessage(), "\n";
 }
 ```
 ### English
@@ -98,13 +98,13 @@ if ($obj === null) {
 If you want to get information about the video in English.
 
 ```PHP
-$obj = $search->get($img);
+$obj = $search->find($file);
 ```
 
 or
 
 ```PHP
-$obj = $search->get($img,"en");
+$obj = $search->find($file, LanguageEnum::ENGLISH);
 ```
 
 ### Russian
@@ -112,9 +112,23 @@ $obj = $search->get($img,"en");
 If you want to get information about the video in Russian.
 
 ```PHP
-$obj = $search->get($img,"ru");
+$obj = $search->find($file, LanguageEnum::RUSSIAN);
 ```
 
+## Run in Docker
+```shell
+## build
+docker build -t video-color-search-client . 
+
+## shell
+docker run -it video-color-search-client bash
+
+## run sample.php
+docker run video-color-search-client php sample.php test.jpg
+
+## run tests
+docker run video-color-search-client ./vendor/phpunit/phpunit/phpunit --testdox tests
+```
 ## Publications in Russian
 
 * [Video Search Technology "Video Color"](https://medium.com/@grifer163/%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F-%D0%B2%D0%B8%D0%B4%D0%B5%D0%BE-%D0%BF%D0%BE%D0%B8%D1%81%D0%BA%D0%B0-video-color-8960214cc911)

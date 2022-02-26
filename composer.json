@@ -1,23 +1,29 @@
 {
-    "name": "aap_software/video_color_search_client",
-    "description": "Composer package for video search by screenshot",
-    "type": "library",
-    "require": {
-        "php": ">=5.4.0"
-    },
-    "require-dev": {
-        "php": ">=5.4.0"
-    },
-    "autoload": {
-        "psr-4": {
-            "AapSoftware\\VideoColor\\": "src/"
-        }
-    },
-    "authors": [
-        {
-            "name": "Alexander Alekseev",
-            "email": "alekseev23@users.noreply.github.com"
-        }
-    ],
-    "minimum-stability": "stable"
+  "name": "aap_software/video_color_search_client",
+  "description": "Composer package for video search by screenshot",
+  "type": "library",
+  "version": "2.0.0",
+  "authors": [
+    {
+      "name": "Alexander Alekseev",
+      "email": "alekseev23@users.noreply.github.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "autoload": {
+    "psr-4": {
+      "AapSoftware\\VideoColor\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=7.4",
+    "ext-gd": "*",
+    "ext-curl": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^8",
+    "ext-dom": "*",
+    "ext-json": "*",
+    "ext-zip": "*"
+  }
 }
