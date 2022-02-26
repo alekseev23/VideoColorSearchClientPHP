@@ -68,29 +68,26 @@ use AapSoftware\VideoColor\SearchClient;
 
 ...
 
-$img = imagecreatefromjpeg($fname);
 $search = new AapSoftware\VideoColor\SearchClient();
-$obj = $search->get($img);
-imagedestroy($img);
+$obj = $search->find($file);
 
 if ($obj === null) {
     echo "Server not connected!\n";
-    return;
 } elseif (!$obj->result) {
-	echo "Not found\n";
+    echo "Not found\n";
 } else {
-	echo "Title:\t" . $obj->title . "\n";
-	echo "Frame:\t" . $obj->frame."\n";
-	echo "Position:\t" . $obj->position . "\n";
-	echo "Duration:\t" . $obj->duration . "\n";
-	echo "Producer:\t".$obj->producer."\n";
-	echo "Country:\t".$obj->country."\n";
-	echo "Creation year:\t".$obj->creation_year."\n";
-	echo "Genre:\t".$obj->genre."\n";
-	echo "Actors:\t".$obj->actors."\n";
-	echo "IMDB:\t".$obj->imdb."\n";
-	echo "Kinopoisk:\t".$obj->kinopoisk."\n";
-	echo "Description:\t".$obj->description."\n";
+    echo "Title:\t" . $obj->title . "\n";
+    echo "Frame:\t" . $obj->frame."\n";
+    echo "Position:\t" . $obj->position . "\n";
+    echo "Duration:\t" . $obj->duration . "\n";
+    echo "Producer:\t".$obj->producer."\n";
+    echo "Country:\t".$obj->country."\n";
+    echo "Creation year:\t".$obj->creation_year."\n";
+    echo "Genre:\t".$obj->genre."\n";
+    echo "Actors:\t".$obj->actors."\n";
+    echo "IMDB:\t".$obj->imdb."\n";
+    echo "Kinopoisk:\t".$obj->kinopoisk."\n";
+    echo "Description:\t".$obj->description."\n";
 }
 ```
 ### English
@@ -98,13 +95,13 @@ if ($obj === null) {
 If you want to get information about the video in English.
 
 ```PHP
-$obj = $search->get($img);
+$obj = $search->find($file);
 ```
 
 or
 
 ```PHP
-$obj = $search->get($img,"en");
+$obj = $search->find($file, LanguageEnum::ENGLISH);
 ```
 
 ### Russian
@@ -112,7 +109,7 @@ $obj = $search->get($img,"en");
 If you want to get information about the video in Russian.
 
 ```PHP
-$obj = $search->get($img,"ru");
+$obj = $search->find($file, LanguageEnum::RUSSIAN);
 ```
 
 ## Publications in Russian
