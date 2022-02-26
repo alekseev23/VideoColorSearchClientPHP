@@ -34,19 +34,27 @@ class ApiClient
         $url = self::API_URL . self::API_VERSION . '/' . $this->language. '/' . $resource;
 
         $ch = curl_init();
+
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_POST, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
         $data = curl_exec($ch);
         $code = curl_getinfo($ch, CURLINFO_RESPONSE_CODE);
         $error = curl_error($ch);
+
         curl_close($ch);
+
         if ($code != 200) {
             throw new ApiException('API error: ' . $error, $code);
         }
-        return json_decode($data, true);
+
+        try {
+            return json_decode($data, true, 512, JSON_THROW_ON_ERROR);
+        } catch (\Exception $e) {
+            throw new ApiException('API error: ' . $data);
+        }
     }
 
 }
