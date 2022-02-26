@@ -71,23 +71,26 @@ use AapSoftware\VideoColor\SearchClient;
 $search = new AapSoftware\VideoColor\SearchClient();
 $obj = $search->find($file);
 
-if ($obj === null) {
+try {
+    if ($obj->result) {
+        echo "Title:\t", $obj->title, "\n";
+        echo "Frame:\t", $obj->frame, "\n";
+        echo "Position:\t", $obj->position, "\n";
+        echo "Duration:\t", $obj->duration, "\n";
+        echo "Producer:\t", $obj->producer, "\n";
+        echo "Country:\t", $obj->country, "\n";
+        echo "Creation year:\t", $obj->creation_year, "\n";
+        echo "Genre:\t", $obj->genre, "\n";
+        echo "Actors:\t", $obj->actors, "\n";
+        echo "IMDB:\t", $obj->imdb, "\n";
+        echo "Kinopoisk:\t", $obj->kinopoisk, "\n";
+        echo "Description:\t", $obj->description, "\n";
+    } else {
+        echo "Not found\n";
+    }
+} catch (ApiException $e) {
     echo "Server not connected!\n";
-} elseif (!$obj->result) {
-    echo "Not found\n";
-} else {
-    echo "Title:\t" . $obj->title . "\n";
-    echo "Frame:\t" . $obj->frame."\n";
-    echo "Position:\t" . $obj->position . "\n";
-    echo "Duration:\t" . $obj->duration . "\n";
-    echo "Producer:\t".$obj->producer."\n";
-    echo "Country:\t".$obj->country."\n";
-    echo "Creation year:\t".$obj->creation_year."\n";
-    echo "Genre:\t".$obj->genre."\n";
-    echo "Actors:\t".$obj->actors."\n";
-    echo "IMDB:\t".$obj->imdb."\n";
-    echo "Kinopoisk:\t".$obj->kinopoisk."\n";
-    echo "Description:\t".$obj->description."\n";
+    echo $e->getMessage(), "\n";
 }
 ```
 ### English
@@ -118,13 +121,13 @@ $obj = $search->find($file, LanguageEnum::RUSSIAN);
 docker build -t video-color-search-client . 
 
 ## shell
-docker run -it video-color-search-client
+docker run -it video-color-search-client bash
 
 ## run sample.php
-docker run -it video-color-search-client php sample.php test.jpg
+docker run video-color-search-client php sample.php test.jpg
 
 ## run tests
-docker run -it video-color-search-client ./vendor/phpunit/phpunit/phpunit --testdox tests
+docker run video-color-search-client ./vendor/phpunit/phpunit/phpunit --testdox tests
 ```
 ## Publications in Russian
 
