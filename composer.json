@@ -2,7 +2,7 @@
   "name": "aap_software/video_color_search_client",
   "description": "Composer package for video search by screenshot",
   "type": "library",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "authors": [
     {
       "name": "Alexander Alekseev",
